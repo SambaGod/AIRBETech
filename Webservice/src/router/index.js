@@ -9,14 +9,11 @@ import mainView from '../mainView'
 
 import buttons from '../views/basic-elements/buttons'
 import dropdowns from '../views/basic-elements/dropdowns'
-import typography from '../views/basic-elements/typography'
 
 //  Chart Components
 import chartjs from '../views/charts/chartjs'
 
 //  Icons Components
-import mdiIcons from '../views/icons/mdi-icons'
-
 import login from '../views/samples/user-pages/login'
 import register from '../views/samples/user-pages/register'
 
@@ -40,28 +37,20 @@ export default new Router({
         component: dashboard
       },
       {
-        path: '/buttons',
+        path: '/patient',
         name: 'buttons',
         component: buttons
       },
       {
-        path: '/dropdowns',
+        path: '/patient/add',
         component: dropdowns
       },
       {
-        path: '/typography',
-        component: typography
-      },
-      {
-        path: '/chartjs',
+        path: '/tasks',
         component: chartjs
       },
       {
-        path: '/mdiIcons',
-        component: mdiIcons
-      },
-      {
-        path: '/basic_table',
+        path: '/messages',
         name: 'basicTables',
         component: basicTables
       }

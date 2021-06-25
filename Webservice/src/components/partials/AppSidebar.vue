@@ -38,10 +38,10 @@
           <b-collapse id="ui-basic">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <router-link class="nav-link" to="/buttons/">Main Patient Data</router-link>
+                <router-link class="nav-link" to="/patient/">Main Patient Data</router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" to="/dropdowns/">Additional Patient Data</router-link>
+                <router-link class="nav-link" to="/patient/add">Additional Patient Data</router-link>
               </li>
             </ul>
           </b-collapse>
@@ -55,7 +55,7 @@
           <b-collapse id="charts-dropdown">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <router-link class="nav-link" to="/chartjs/">Assign Tasks</router-link>
+                <router-link class="nav-link" to="/tasks/">Assign Tasks</router-link>
               </li>
             </ul>
           </b-collapse>
@@ -69,7 +69,7 @@
           <b-collapse id="tables">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <router-link class="nav-link" to="/basic_table/">My Messages</router-link>
+                <router-link class="nav-link" to="/messages/">My Messages</router-link>
               </li>
             </ul>
           </b-collapse>
