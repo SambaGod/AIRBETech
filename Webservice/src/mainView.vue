@@ -7,7 +7,9 @@
         <app-sidebar/>
         <div class="main-panel">
           <div class="content-wrapper">
+            <keep-alive>
             <router-view></router-view>
+            </keep-alive>
           </div>
           <!-- content wrapper ends -->
           <app-footer/>
