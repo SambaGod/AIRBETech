@@ -11,7 +11,7 @@ import buttons from '../views/basic-elements/buttons'
 import dropdowns from '../views/basic-elements/dropdowns'
 
 //  Chart Components
-import chartjs from '../views/charts/chartjs'
+import assignTasks from '../views/tasks/assign-tasks'
 
 //  Icons Components
 import login from '../views/samples/user-pages/login'
@@ -47,7 +47,7 @@ export default new Router({
       },
       {
         path: '/tasks',
-        component: chartjs
+        component: assignTasks
       },
       {
         path: '/messages',
