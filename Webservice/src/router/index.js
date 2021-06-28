@@ -7,7 +7,7 @@ import dashboard from '../views/dashboard'
 //  Widgets Components
 import mainView from '../mainView'
 
-import buttons from '../views/basic-elements/buttons'
+import patient from '../views/patient'
 import dropdowns from '../views/basic-elements/dropdowns'
 
 //  Chart Components
@@ -26,51 +26,55 @@ export default new Router({
   linkActiveClass: 'active',
   scrollBehavior: () => ({ y: 0 }),
   mode: 'hash',
-  routes: [{
-    path: '/',
-    redirect: '/dashboard',
-    component: mainView,
-    children: [
-      {
-        path: '/dashboard',
-        name: 'dashboard',
-        component: dashboard
-      },
-      {
-        path: '/patient',
-        name: 'buttons',
-        component: buttons
-      },
-      {
-        path: '/patient/add',
-        component: dropdowns
-      },
-      {
-        path: '/tasks',
-        component: chartjs
-      },
-      {
-        path: '/messages',
-        name: 'basicTables',
-        component: basicTables
-      }
-    ]
-  },
-  {
-    path: '*',
-    redirect: '/pages/error_404',
-    component: {
-      render (c) { return c('router-view') }
+  routes: [
+    {
+      path: '/',
+      redirect: '/dashboard',
+      component: mainView,
+      children: [
+        {
+          path: '/dashboard',
+          name: 'dashboard',
+          component: dashboard
+        },
+        {
+          path: '/patient',
+          name: 'patient',
+          component: patient
+        },
+        {
+          path: '/patient/add',
+          component: dropdowns
+        },
+        {
+          path: '/tasks',
+          component: chartjs
+        },
+        {
+          path: '/messages',
+          name: 'basicTables',
+          component: basicTables
+        }
+      ]
     },
-    children: [
-      {
-        path: '/pages/login',
-        component: login
+    {
+      path: '*',
+      redirect: '/pages/error_404',
+      component: {
+        render (c) {
+          return c('router-view')
+        }
       },
-      {
-        path: '/pages/register',
-        component: register
-      }
-    ]}
+      children: [
+        {
+          path: '/pages/login',
+          component: login
+        },
+        {
+          path: '/pages/register',
+          component: register
+        }
+      ]
+    }
   ]
 })

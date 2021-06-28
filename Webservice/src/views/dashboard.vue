@@ -1,13 +1,12 @@
-<template lang='html'>
-  <h5> hello </h5>
+<template lang="html">
+  <h5>hello</h5>
 </template>
 
-<script lang='js'>
+<script lang="js">
 
 export default {
-  name: 'dashboard',
+  name: 'dashboard'
 }
 </script>
 
-<style scoped lang='scss'>
-</style>
+<style scoped lang="scss"></style>
