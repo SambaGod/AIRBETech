@@ -10,14 +10,12 @@
               placeholder="<Patient Name>"
             />
           </div>
-          <button type="submit" class="btn btn-primary mb-2">
+          <button type="submit" class="btn btn-lg btn-primary mb-2">
             Search
           </button>
         </form>
       </div>
-      <div>
-        <button class="btn btn-primary">QR Code</button>
-      </div>
+      <PatientQR />
     </div>
     <PatientGeneral />
   </div>
@@ -25,10 +23,22 @@
 
 <script lang="js">
 import PatientGeneral from './PatientGeneral'
+import PatientQR from './PatientQR'
 export default {
   name: 'patient',
   components: {
-    PatientGeneral
+    PatientGeneral,
+    PatientQR
+  },
+  props: {
+    name: 'Jenny'
   }
 }
 </script>
+
+<style scoped lang="css">
+  input[type=text] {
+    width: 20em;
+    font-size: 1.5em;
+  }
+</style>

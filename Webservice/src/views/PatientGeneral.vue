@@ -1,39 +1,53 @@
 <template>
   <div>
-    <div class="card">
-      <div class="card-body">
-        <h2>
-          <strong>{{ name }}</strong> <span>| Room: {{ room }}</span>
-        </h2>
-        <h4>
-          <strong>Gender:</strong> <span>{{ gender }}</span>
-          <strong class='pl-4'>Age:</strong> <span>{{ age }}</span>
-          </h4>
-        <div>
-          <h4>
-          <strong>Diagnosis:</strong> <span>{{ diagnosis }}</span>
-          </h4>
-          <h4>
-          <strong>Symptoms:</strong> <span v-for='symptom in symptoms' :key='symptom'>{{ symptom }}, </span>
-          </h4>
-          <h4>
-          <strong>Medication:</strong> <span v-for='medication in medications' :key='medication'>{{ medication }}, </span>
-          </h4>
-          <h4>
-          <strong>Tasks:</strong> <span v-for='task in tasks' :key='task'>{{ task }}, </span>
-          </h4>
-        </div>
+    <div class='card'>
+      <div class='card-body'>
+        <table class="table">
+          <tr>
+            <th>First Name</th>
+            <td>{{ firstname }}</td>
+          </tr>
+          <tr>
+            <th>Last Name</th>
+            <td>{{ lastname }}</td>
+          </tr>
+          <tr>
+            <th>Gender</th>
+            <td>{{ gender }}</td>
+          </tr>
+          <tr>
+            <th>Age</th>
+            <td>{{ age }}</td>
+          </tr>
+          <tr>
+            <th>Diagnosis</th>
+            <td>{{ diagnosis }}</td>
+          </tr>
+          <tr>
+            <th>Symptoms</th>
+            <td><span v-for='symptom in symptoms' :key='symptom'>{{ symptom }}, </span></td>
+          </tr>
+          <tr>
+            <th>Medication</th>
+            <td><span v-for='medication in medications' :key='medication'>{{ medication }}, </span></td>
+          </tr>
+          <tr>
+            <th>Tasks</th>
+            <td><span v-for='task in tasks' :key='task'>{{ task }}, </span></td>
+          </tr>
+        </table>
       </div>
     </div>
-    <button class="btn btn-primary mt-5" @click='toggleAddInfo()'>Additional Information</button>
+    <button class='btn btn-primary btn-lg mt-5' @click='toggleAddInfo()'>Additional Information</button>
   </div>
 </template>
 
-<script lang="js">
+<script lang='js'>
 export default {
   data () {
     return {
-      name: 'Jenny Schmidt',
+      firstname: 'Jenny',
+      lastname: 'Schmidt',
       room: 256,
       gender: 'F',
       age: 24,
@@ -64,3 +78,13 @@ export default {
   }
 }
 </script>
+
+<style scoped lang='scss'>
+  table {
+    tr {
+      th, td{
+        font-size: 1.5em;
+      }
+    }
+  }
+</style>
