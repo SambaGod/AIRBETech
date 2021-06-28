@@ -8,8 +8,9 @@
       ></b-form-input>
       <b-form-datepicker
         v-model="due_date"
-        class="mb-2 due-date"
+        class="p-2 due-date float-left"
       ></b-form-datepicker>
+       <b-form-timepicker v-model="due_time" class="p-2 float-right" locale="de"></b-form-timepicker>
       <b-form-select
         v-model="priority"
         :options="priority_options"
@@ -23,7 +24,7 @@
         <b-dropdown-item href="#">Mario Mitz</b-dropdown-item>
         <b-dropdown-item href="#">Jon Doe</b-dropdown-item>
       </b-dropdown>
-      <b-button variant="success">Create Task</b-button>
+      <b-button class="float-right" variant="success">Create Task</b-button>
     </b-form>
 
   </div>
@@ -42,6 +43,7 @@ export default {
       assignee: 'You',
       priority: 'Medium',
       due_date: null,
+      due_time: null,
       priority_options: [
         'Low', 'Medium', 'High'
       ]
