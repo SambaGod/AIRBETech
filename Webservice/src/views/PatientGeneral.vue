@@ -20,6 +20,10 @@
             <td>{{ age }}</td>
           </tr>
           <tr>
+            <th>Room</th>
+            <td>{{ room }}</td>
+          </tr>
+          <tr>
             <th>Diagnosis</th>
             <td>{{ diagnosis }}</td>
           </tr>
@@ -38,7 +42,6 @@
         </table>
       </div>
     </div>
-    <button class='btn btn-primary btn-lg mt-5' @click='toggleAddInfo()'>Additional Information</button>
   </div>
 </template>
 
@@ -68,14 +71,7 @@ export default {
       ]
     }
   },
-  name: 'PatientGeneral',
-  methods: {
-    toggleAddInfo () {
-      return (
-        console.log('Additional Info Button Clicked')
-      )
-    }
-  }
+  name: 'PatientGeneral'
 }
 </script>
 

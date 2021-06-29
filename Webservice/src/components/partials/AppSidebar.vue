@@ -46,11 +46,6 @@
                   >Main Patient Data</router-link
                 >
               </li>
-              <li class="nav-item">
-                <router-link class="nav-link" to="/patient/add"
-                  >Additional Patient Data</router-link
-                >
-              </li>
             </ul>
           </b-collapse>
         </li>

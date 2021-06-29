@@ -5,9 +5,18 @@
             <h3 class="my-4">Please place QR code in front of the camera</h3>
             <div>
                 <p class='error'>{{ error }}</p>
-                <qrcode-stream @decode='onDecode' @init='onInit' />
-                <p class='decode-result'>URL Result:
-                    <a :href='result'>{{ result }}</a>
+                <qrcode-stream @decode='onDecode' @init='onInit' class="text-center">
+                    <div class="loading-indicator spinner-border m-5" v-if="loading" role="status">
+                      <span class="sr-only">Loading...</span>
+                    </div>
+                </qrcode-stream>
+                <p class='decode-result pt-3 h5'>Status:
+                    <i v-if='result' class="mdi mdi-checkbox-marked-circle text-success"></i>
+                    <i v-if='result==""' class="mdi mdi-close-circle text-danger"></i>
+                </p>
+                <hr />
+                <p>
+                    <strong>Note:</strong> Please make sure the status turns to a green check before removing the QR code
                 </p>
             </div>
         </b-modal>
@@ -26,7 +35,8 @@ export default {
   data () {
     return ({
       result: '',
-      error: ''
+      error: '',
+      loading: false
     })
   },
   methods: {
@@ -35,6 +45,7 @@ export default {
     },
     async onInit (promise) {
       try {
+        this.loading = true
         await promise
       } catch (error) {
         if (error.name === 'NotAllowedError') {
@@ -50,6 +61,8 @@ export default {
         } else if (error.name === 'StreamApiNotSupportedError') {
           this.error = 'ERROR: Stream API is not supported in this browser'
         }
+      } finally {
+        this.loading = false
       }
     }
   }

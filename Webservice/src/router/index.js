@@ -7,8 +7,8 @@ import dashboard from '../views/dashboard'
 //  Widgets Components
 import mainView from '../mainView'
 
-import patient from '../views/patient'
-import dropdowns from '../views/basic-elements/dropdowns'
+import Patient from '../views/patient'
+import PatientDetails from '../views/PatientDetails'
 
 //  Chart Components
 import chartjs from '../views/charts/chartjs'
@@ -39,12 +39,12 @@ export default new Router({
         },
         {
           path: '/patient',
-          name: 'patient',
-          component: patient
+          name: 'Patient',
+          component: Patient
         },
         {
-          path: '/patient/add',
-          component: dropdowns
+          path: '/patient/patient-details',
+          component: PatientDetails
         },
         {
           path: '/tasks',
