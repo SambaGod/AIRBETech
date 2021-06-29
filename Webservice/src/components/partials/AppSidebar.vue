@@ -19,6 +19,9 @@
           <router-link class="nav-link" to="/"><span class="menu-title">My Tasks</span></router-link>
         </li>
         <li class="nav-item">
+          <router-link class="nav-link" to="/tasks/"><span class="menu-title">Assign Tasks</span></router-link>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" v-b-toggle="'ui-basic'">
             <i class="menu-icon typcn typcn-coffee"></i>
             <span class="menu-title">Patient Data</span>
@@ -31,20 +34,6 @@
               </li>
               <li class="nav-item">
                 <router-link class="nav-link" to="/patient/add">Additional Patient Data</router-link>
-              </li>
-            </ul>
-          </b-collapse>
-        </li>
-         <li class="nav-item">
-          <span class="nav-link" v-b-toggle="'charts-dropdown'">
-            <i class="menu-icon typcn typcn-th-large-outline"></i>
-            <span class="menu-title">Task Management</span>
-            <i class="menu-arrow"></i>
-          </span>
-          <b-collapse id="charts-dropdown">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item">
-                <router-link class="nav-link" to="/tasks/">Assign Tasks</router-link>
               </li>
             </ul>
           </b-collapse>
