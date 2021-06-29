@@ -3,24 +3,24 @@
     <b-form @submit="onSubmit" @reset="onReset">
       <b-form-input
         class="task-description"
-        v-model="text"
+        v-model="task.text"
         placeholder="Enter task description..."
       ></b-form-input>
       <b-form-datepicker
         v-model="due_date"
         class="p-2 due-date float-left"
       ></b-form-datepicker>
-       <b-form-timepicker v-model="due_time" class="p-2 float-right" locale="de"></b-form-timepicker>
+       <b-form-timepicker v-model="task.due_time" class="p-2 float-right" locale="de"></b-form-timepicker>
       <b-form-select
-        v-model="priority"
-        :options="priority_options"
+        v-model="task.priority"
+        :options="data.priority_options"
         class="mb-2 priority"
       ></b-form-select>
-      <b-dropdown id="dropdown-form" :text="assignee" ref="dropdown" class="m-2">
+      <b-dropdown id="dropdown-form" :text="task.assignee" ref="dropdown" class="m-2">
         <b-dropdown-item href="#">Luise Müller</b-dropdown-item>
         <b-dropdown-item href="#">Mario Test</b-dropdown-item>
       </b-dropdown>
-      <b-dropdown id="dropdown-form" :text="patients" ref="dropdown" class="m-2">
+      <b-dropdown id="dropdown-form" :text="task.patient" ref="dropdown" class="m-2">
         <b-dropdown-item href="#">Mario Mitz</b-dropdown-item>
         <b-dropdown-item href="#">Jon Doe</b-dropdown-item>
       </b-dropdown>
@@ -38,15 +38,25 @@ export default {
   },
   data: function () {
     return {
-      text: '',
-      patients: 'Select Patient',
-      assignee: 'You',
-      priority: 'Medium',
-      due_date: null,
-      due_time: null,
-      priority_options: [
-        'Low', 'Medium', 'High'
-      ]
+      task: {
+        text: '',
+        patient: 'Select Patient',
+        assignee: 'You',
+        priority: 'Medium',
+        due_date: null,
+        due_time: null
+      },
+      data: {
+        priority_options: [
+          'Low', 'Medium', 'High'
+        ],
+        assignees: [
+          'Jon Doe'
+        ],
+        patients: [
+          'Jan Freund'
+        ]
+      }
     }
   },
   methods: {
