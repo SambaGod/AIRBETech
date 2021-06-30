@@ -19,7 +19,7 @@
           <router-link class="nav-link" to="/"><span class="menu-title">My Tasks</span></router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/tasks/"><span class="menu-title">Assign Tasks</span></router-link>
+          <router-link class="nav-link" to="/tasks/"><span class="menu-title">Create Task</span></router-link>
         </li>
         <li class="nav-item">
           <a class="nav-link" v-b-toggle="'ui-basic'">
