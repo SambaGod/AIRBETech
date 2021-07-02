@@ -19,67 +19,30 @@
           </a>
         </li>
         <li class="nav-item nav-category">Main Menu</li>
-        <li class="nav-item">
-          <a class="nav-link" v-b-toggle="'dashboard-dropdown'">
-            <i class="menu-icon typcn typcn-document-text"></i>
-            <span class="menu-title">Dashboard</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <b-collapse id="dashboard-dropdown">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item">
-                <router-link class="nav-link" to="/">My Tasks</router-link>
-              </li>
-            </ul>
-          </b-collapse>
-        </li>
-        <li class="nav-item">
+         <li class="nav-item">
           <a class="nav-link" v-b-toggle="'ui-basic'">
             <i class="menu-icon typcn typcn-coffee"></i>
-            <span class="menu-title">Patient Data</span>
+            <span class="menu-title">Task Management</span>
             <i class="menu-arrow"></i>
           </a>
           <b-collapse id="ui-basic">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <router-link class="nav-link" to="/patient/"
-                  >Main Patient Data</router-link
-                >
+                <router-link class="nav-link" to="/"><span class="menu-title">My Tasks</span></router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link" to="/tasks/"><span class="menu-title">Create Task</span></router-link>
               </li>
             </ul>
           </b-collapse>
         </li>
         <li class="nav-item">
-          <span class="nav-link" v-b-toggle="'charts-dropdown'">
-            <i class="menu-icon typcn typcn-th-large-outline"></i>
-            <span class="menu-title">Task Management</span>
-            <i class="menu-arrow"></i>
-          </span>
-          <b-collapse id="charts-dropdown">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item">
-                <router-link class="nav-link" to="/tasks/"
-                  >Assign Tasks</router-link
-                >
-              </li>
-            </ul>
-          </b-collapse>
+          <router-link class="nav-link" to="/patient/"
+            ><span class="menu-title">Patient Data</span></router-link
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" v-b-toggle="'tables'">
-            <i class="menu-icon mdi mdi-table"></i>
-            <span class="menu-title">Messages</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <b-collapse id="tables">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item">
-                <router-link class="nav-link" to="/messages/"
-                  >My Messages</router-link
-                >
-              </li>
-            </ul>
-          </b-collapse>
+          <router-link class="nav-link" to="/messages/"><span class="menu-title">Messages</span></router-link>
         </li>
         <li class="nav-item">
           <a class="nav-link" v-b-toggle="'auth'">
