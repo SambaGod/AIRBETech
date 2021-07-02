@@ -38,6 +38,10 @@
           </div>
         </div>
       </div>
+      <div class="float-right p-2">
+        <b-button variant="">Load</b-button>
+        <b-button variant="">Save Template</b-button>
+      </div>
     </b-form>
 
   </div>
@@ -81,12 +85,21 @@ export default {
     }
   },
   methods: {
-    onSubmit: function () {
-      alert(1)
-      console.log(this)
+    onSubmit: function (event) {
+      event.preventDefault()
+      // TODO: Show notification that task was created
+
+      this.onReset()
     },
     onReset: function () {
-
+      this.task = {
+        text: '',
+        patient: null,
+        assignee: { name: 'John Doe', 'group': 'Doctor' },
+        priority: 'Medium',
+        due_date: null,
+        due_time: null
+      }
     }
   }
 }
