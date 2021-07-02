@@ -34,7 +34,7 @@
                 <b-tab title="Patient Decree">
                     <div class="card">
                         <div class="card-body">
-                            Patient Decree not available
+                            <img src="../assets/images/decree.png" alt="patient-decree" width="100%">
                         </div>
                     </div>
                 </b-tab>

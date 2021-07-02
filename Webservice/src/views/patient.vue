@@ -17,10 +17,8 @@
       </div>
       <PatientQR />
     </div>
-    <div :class='info ? "" : "d-none"'>
-      <PatientGeneral />
-      <router-link class="nav-link btn btn-primary py-4 mt-5" to="/patient/patient-details/">Load More Details</router-link>
-    </div>
+    <PatientGeneral :info="info" />
+    <router-link v-if='info' class="nav-link btn btn-primary py-4 mt-5" to="/patient/patient-details/">Load More Details</router-link>
   </div>
 </template>
 
