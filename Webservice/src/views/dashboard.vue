@@ -12,6 +12,15 @@
     </b-dropdown>
   </div>
   <h5 style="text-align: center"> <b> John Doe's Tasks </b> </h5>
+  <b-modal id="modal-f" title="Forward Task" @ok="forwardEntry" @cancel="resetForward">    
+    <b-form-group
+      label="New Assignee:"
+      label-for="name-input"
+    >
+      <b-form-input id="name-input" v-model="forwarded_user" placeholder="<Assignee name>">
+      </b-form-input>
+    </b-form-group>
+  </b-modal>
   <b-table :items="tabledata" :fields="fields"
       class="text-center"
       id="mytasks"
@@ -36,6 +45,7 @@
 </template>
 
 <script lang="js">
+import { BModal } from 'bootstrap-vue'
 
 export default {
   name: 'dashboard',
@@ -68,16 +78,37 @@ export default {
         {value: 'close', text: 'Close Task'},
       ],
       priority: { 'low': 2, 'medium': 1, 'high':0 },
+      forwarded_user: null,
+      rm_row: null,
     }
   },
   methods: {
-    removeEntry (value) {
+    removeEntry(value) {
       this.$nextTick(() => {
         let idx_entry =  this.tabledata.indexOf(value)
-        if (confirm('Confirm: Task is completed or will be forwarded and can be closed.')) {
-          this.tabledata.splice(idx_entry, 1)
-        }
+        this.$confirm(
+          {
+            message: `Task is completed and can be closed?`,
+            button: {
+              no: 'No',
+              yes: 'Yes'
+            },
+            /**
+            * Callback Function
+            * @param {Boolean} confirm 
+            */
+            callback: confirm => {
+              if (confirm) {
+                this.tabledata.splice(idx_entry, 1)
+              }
+            }
+          }
+        ) 
       })
+    },
+    forwardEntry() {
+      let idx_entry =  this.tabledata.indexOf(this.rm_row)
+      this.tabledata.splice(idx_entry, 1)
     },
     changeColor(value) {
       let idx_entry =  this.tabledata.indexOf(value)
@@ -90,11 +121,11 @@ export default {
         this.removeEntry(value)
       } else if (value.status == 'forward') {
         this.forwardTask(this.tabledata[idx_entry])
-        this.removeEntry(value)
       }
     },
     forwardTask(rowdata) {
-      console.log(rowdata.task_description)
+      this.$bvModal.show('modal-f')
+      this.rm_row = rowdata	
     },
     sortingChanged(a, b, key) {
       let result = 0;
@@ -104,6 +135,10 @@ export default {
           return this.priority[one] - this.priority[two];
       } 
       return false;
+    },
+    resetForward() {
+      let idx_entry =  this.tabledata.indexOf(this.rm_row)
+      this.tabledata[idx_entry].status = 'open'
     }
 
   }
