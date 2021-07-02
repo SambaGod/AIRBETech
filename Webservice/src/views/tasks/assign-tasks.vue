@@ -1,6 +1,9 @@
 <template lang="html">
   <div>
     <h3>Create Task</h3>
+    <b-alert v-model="showDismissibleAlert" variant="success" dismissible>
+      Task created successfully!
+    </b-alert>
     <b-form @submit="onSubmit" @reset="onReset">
       <b-form-input
         class="task-description"
@@ -57,6 +60,7 @@ export default {
   },
   data: function () {
     return {
+      showDismissibleAlert: false,
       task: {
         text: '',
         patient: null,
@@ -87,7 +91,7 @@ export default {
   methods: {
     onSubmit: function (event) {
       event.preventDefault()
-      // TODO: Show notification that task was created
+      this.showDismissibleAlert = true
 
       this.onReset()
     },
