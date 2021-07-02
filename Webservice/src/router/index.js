@@ -7,8 +7,8 @@ import dashboard from '../views/dashboard'
 //  Widgets Components
 import mainView from '../mainView'
 
-import buttons from '../views/basic-elements/buttons'
-import dropdowns from '../views/basic-elements/dropdowns'
+import Patient from '../views/patient'
+import PatientDetails from '../views/PatientDetails'
 
 //  Chart Components
 import assignTasks from '../views/tasks/assign-tasks'
@@ -26,51 +26,55 @@ export default new Router({
   linkActiveClass: 'active',
   scrollBehavior: () => ({ y: 0 }),
   mode: 'hash',
-  routes: [{
-    path: '/',
-    redirect: '/dashboard',
-    component: mainView,
-    children: [
-      {
-        path: '/dashboard',
-        name: 'dashboard',
-        component: dashboard
-      },
-      {
-        path: '/patient',
-        name: 'buttons',
-        component: buttons
-      },
-      {
-        path: '/patient/add',
-        component: dropdowns
-      },
-      {
-        path: '/tasks',
-        component: assignTasks
-      },
-      {
-        path: '/messages',
-        name: 'basicTables',
-        component: basicTables
-      }
-    ]
-  },
-  {
-    path: '*',
-    redirect: '/pages/error_404',
-    component: {
-      render (c) { return c('router-view') }
+  routes: [
+    {
+      path: '/',
+      redirect: '/dashboard',
+      component: mainView,
+      children: [
+        {
+          path: '/dashboard',
+          name: 'dashboard',
+          component: dashboard
+        },
+        {
+          path: '/patient',
+          name: 'Patient',
+          component: Patient
+        },
+        {
+          path: '/patient/patient-details',
+          component: PatientDetails
+        },
+        {
+          path: '/tasks',
+          component: assignTasks
+        },
+        {
+          path: '/messages',
+          name: 'basicTables',
+          component: basicTables
+        }
+      ]
     },
-    children: [
-      {
-        path: '/pages/login',
-        component: login
+    {
+      path: '*',
+      redirect: '/pages/error_404',
+      component: {
+        render (c) {
+          return c('router-view')
+        }
       },
-      {
-        path: '/pages/register',
-        component: register
-      }
-    ]}
+      children: [
+        {
+          path: '/pages/login',
+          component: login
+        },
+        {
+          path: '/pages/register',
+          component: register
+        }
+      ]
+    }
   ]
 })

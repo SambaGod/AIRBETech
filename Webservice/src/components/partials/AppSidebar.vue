@@ -5,7 +5,11 @@
         <li class="nav-item nav-profile">
           <a href="#" class="nav-link">
             <div class="profile-image">
-              <img class="img-xs rounded-circle" src="../../assets/images/airbe/doctor_profile.jpg" alt="profile image">
+              <img
+                class="img-xs rounded-circle"
+                src="../../assets/images/airbe/doctor_profile.jpg"
+                alt="profile image"
+              />
               <div class="dot-indicator bg-success"></div>
             </div>
             <div class="text-wrapper">
@@ -30,10 +34,9 @@
           <b-collapse id="ui-basic">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <router-link class="nav-link" to="/patient/">Main Patient Data</router-link>
-              </li>
-              <li class="nav-item">
-                <router-link class="nav-link" to="/patient/add">Additional Patient Data</router-link>
+                <router-link class="nav-link" to="/patient/"
+                  >Main Patient Data</router-link
+                >
               </li>
             </ul>
           </b-collapse>
@@ -50,10 +53,14 @@
           <b-collapse id="auth">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <router-link class="nav-link" to="/pages/login/">Login</router-link>
+                <router-link class="nav-link" to="/pages/login/"
+                  >Login</router-link
+                >
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" to="/pages/register/">Register</router-link>
+                <router-link class="nav-link" to="/pages/register/"
+                  >Register</router-link
+                >
               </li>
             </ul>
           </b-collapse>

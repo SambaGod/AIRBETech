@@ -36,6 +36,7 @@
     "vue-md-date-picker": "^1.0.16",
     "vue-mention": "^1.0.0",
     "vue-multiselect": "^2.1.6",
+    "vue-qrcode-reader": "^3.0.3",
     "vue-router": "^3.0.6",
     "vue-slide-bar": "^1.1.9",
     "vue-snotify": "^3.2.1",
