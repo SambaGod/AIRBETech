@@ -1,7 +1,12 @@
-<template lang='html'>
-<div>
-  <div class='export'>
-    <b-dropdown class="ml-auto" id="dropdownexport" text="Export Tasks" variant="secondary">
+<template lang="html">
+  <div>
+    <div class="export">
+      <b-dropdown
+        class="ml-auto"
+        id="dropdownexport"
+        text="Export Tasks"
+        variant="secondary"
+      >
         <b-dropdown-item>Export as PDF</b-dropdown-item>
         <b-dropdown-item>Export as Excel</b-dropdown-item>
     </b-dropdown>
@@ -9,34 +14,34 @@
   <h5 style="text-align: center"> <b> John Doe's Tasks </b> </h5>
   <b-table :items="tabledata" :fields="fields"
       class="text-center"
-      id='mytasks'
-      head-variant='light'
+      id="mytasks"
+      head-variant="light"
       outlined
       :sort-compare="sortingChanged"
       >
 
       <template v-slot:cell(status)="data">
-      <div>
-        <b-form-select
-          v-model="data.item.status"
-          :options="status_options"
-          size="sm"
-          @change="changeColor(data.item)"
-        />
-      </div>
+        <div>
+          <b-form-select
+            v-model="data.item.status"
+            :options="status_options"
+            size="sm"
+            @change="changeColor(data.item)"
+          />
+        </div>
       </template>
 
   </b-table>
 </div>
 </template>
 
-<script lang='js'>
+<script lang="js">
 
 export default {
   name: 'dashboard',
-  data: function() {
-    return{
-      fields: [ //table header
+  data: function () {
+    return {
+      fields: [ // table header
         { key: 'task_description', sortable: true },
         { key: 'patients', sortable: true },
         { key: 'assigned_by', sortable: true },
@@ -66,7 +71,7 @@ export default {
     }
   },
   methods: {
-    removeEntry(value) {
+    removeEntry (value) {
       this.$nextTick(() => {
         let idx_entry =  this.tabledata.indexOf(value)
         if (confirm('Confirm: Task is completed or will be forwarded and can be closed.')) {
@@ -105,7 +110,7 @@ export default {
 }
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 #mytasks {
   margin: 20px;
   background-color: rgb(239, 239, 239);
