@@ -11,39 +11,47 @@
         placeholder="Enter task description..."
       ></b-form-input>
       <div class="advanced-container pt-1">
-        <div class="row">
-          <div class="col-2">
+        <div class="row row-sm-2">
+          <div class="col">
             <b-form-datepicker
               v-model="due_date"
               class="p-1 due-date"
             ></b-form-datepicker>
           </div>
-          <div class="col-2">
+          <div class="col">
             <b-form-timepicker v-model="task.due_time" class="p-1" locale="de"></b-form-timepicker>
           </div>
-          <div class="col-2">
+          <div class="col">
             <multiselect v-model="task.priority" placeholder="Select Priority" :options="data.priority_options">
             </multiselect>
           </div>
-          <div class="col-2">
+          <div class="col">
             <multiselect v-model="task.assignee" placeholder="Select Assignee" label="name" track-by="name" :options="data.assignees" :select-label="group" :show-labels="false">
               <template slot="option" slot-scope="props">
                 <div class="option__desc"><span class="option__title">{{ props.option.name }}</span><span class="option__small">{{ props.option.group }}</span></div>
               </template>
             </multiselect>
           </div>
-          <div class="col-2">
+          <div class="col">
             <multiselect v-model="task.patient" placeholder="Select Patient" :options="data.patients">
             </multiselect>
           </div>
-          <div class="col-2">
+          <div class="col">
             <b-button type="submit" variant="success" class="w-100 h-100">Create Task</b-button>
           </div>
         </div>
       </div>
-      <div class="float-right p-2">
-        <b-button variant="">Load</b-button>
-        <b-button variant="">Save Template</b-button>
+      <div class="advanced-container pt-1">
+        <div class="row">
+          <div class="col-2">
+            <multiselect v-model="task.repeat" placeholder="Repeat Task" :options="data.repetitions">
+            </multiselect>
+          </div>
+          <div class="col-10 float-right p-1 text-right">
+            <b-button variant="">Load</b-button>
+            <b-button variant="">Save Template</b-button>
+          </div>
+        </div>
       </div>
     </b-form>
 
@@ -84,6 +92,12 @@ export default {
           'Jessica Jones',
           'Oscar Brown',
           'Michael Smith'
+        ],
+        repetitions: [
+          'Daily',
+          'Weekly',
+          'Monthly',
+          'Yearly'
         ]
       }
     }
@@ -122,5 +136,12 @@ export default {
   .b-form-btn-label-control > label {
     display: flex !important;
     align-items: center !important;
+  }
+  .multiselect__placeholder {
+    font-size: .75rem !important;
+    color: #6c757d !important
+  }
+  .multiselect__single {
+    font-size: .75rem !important;
   }
 </style>
