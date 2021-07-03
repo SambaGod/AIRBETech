@@ -22,7 +22,7 @@
             <b-form-timepicker v-model="task.due_time" class="p-1" locale="de"></b-form-timepicker>
           </div>
           <div class="col">
-            <multiselect v-model="task.priority" placeholder="Select Priority" :options="data.priority_options">
+            <multiselect v-model="task.priority" placeholder="Select Priority" :options="data.priority_options" :show-labels="false">
             </multiselect>
           </div>
           <div class="col">
@@ -33,24 +33,22 @@
             </multiselect>
           </div>
           <div class="col">
-            <multiselect v-model="task.patient" placeholder="Select Patient" :options="data.patients">
+            <multiselect v-model="task.patient" placeholder="Select Patient" :options="data.patients" :show-labels="false">
             </multiselect>
           </div>
           <div class="col">
-            <b-button type="submit" variant="success" class="w-100 h-100">Create Task</b-button>
+            <multiselect v-model="task.repeat" placeholder="Repeat Task" :options="data.repetitions" :show-labels="false">
+            </multiselect>
           </div>
         </div>
       </div>
-      <div class="advanced-container pt-1">
-        <div class="row">
-          <div class="col-2">
-            <multiselect v-model="task.repeat" placeholder="Repeat Task" :options="data.repetitions">
-            </multiselect>
-          </div>
-          <div class="col-10 float-right p-1 text-right">
-            <b-button variant="">Load</b-button>
-            <b-button variant="">Save Template</b-button>
-          </div>
+      <div class="row pt-3">
+        <div class="col-10">
+          <b-button class="btn-lg">Load</b-button>
+          <b-button class="btn-lg">Save Template</b-button>
+        </div>
+        <div class="col-2 text-right">
+          <button type="submit" class="btn btn-lg btn-primary">Create Task</button>
         </div>
       </div>
     </b-form>
@@ -82,10 +80,10 @@ export default {
           'Low', 'Medium', 'High'
         ],
         assignees: [
-          { name: 'John Doe', 'group': 'Doctor' },
-          { name: 'Marry Linn', 'group': 'Doctor' },
-          { name: 'Noah James', 'group': 'Nurse' },
-          { name: 'Emma O\'Neill', 'group': 'Nurse' }
+          { name: 'John Doe', 'group': ' Doctor' },
+          { name: 'Marry Linn', 'group': ' Doctor' },
+          { name: 'Noah James', 'group': ' Nurse' },
+          { name: 'Emma O\'Neill', 'group': ' Nurse' }
         ],
         patients: [
           'Sophie Evans',
@@ -124,24 +122,12 @@ export default {
 </script>
 
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
-
-<style lang="scss">
-  .option__small {
-    display: inline-block;
-    padding: .25em;
-    border-radius: .25em;
-    background: #ccc;
-    float: right;
-  }
-  .b-form-btn-label-control > label {
+<style lang="css">
+  input[type='text'], label, .multiselect__single, .multiselect__placeholder {
+    font-size: 14px;
+    color: #adadad;
     display: flex !important;
-    align-items: center !important;
-  }
-  .multiselect__placeholder {
-    font-size: .75rem !important;
-    color: #6c757d !important
-  }
-  .multiselect__single {
-    font-size: .75rem !important;
+    align-items: center;
+    justify-content: center;
   }
 </style>

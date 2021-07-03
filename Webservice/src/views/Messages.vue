@@ -14,42 +14,42 @@
                 </div>
                 <ul class="list-unstyled chat-list mt-2 mb-0">
                     <li class="clearfix">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                        <img src="../assets/images/faces/face4.jpg" alt="avatar">
                         <div class="about">
                             <div class="name">Dr. Mueller</div>
-                            <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins ago </div>                                            
+                            <div class="status"> <i class="fa fa-circle offline"></i> left 7 mins ago </div>
                         </div>
                     </li>
                     <li class="clearfix active">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                        <img src="../assets/images/faces/face3.jpg" alt="avatar">
                         <div class="about">
                             <div class="name">Dr. Schmidt</div>
                             <div class="status"> <i class="fa fa-circle online"></i> online </div>
                         </div>
                     </li>
                     <li class="clearfix">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+                        <img src="../assets/images/faces/face6.jpg" alt="avatar">
                         <div class="about">
                             <div class="name">Nurse Weber</div>
                             <div class="status"> <i class="fa fa-circle online"></i> online </div>
                         </div>
-                    </li>                                    
+                    </li>
                     <li class="clearfix">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                        <img src="../assets/images/faces/face7.jpg" alt="avatar">
                         <div class="about">
                             <div class="name">Dr. Ben</div>
                             <div class="status"> <i class="fa fa-circle offline"></i> left 10 hours ago </div>
                         </div>
                     </li>
                     <li class="clearfix">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="avatar">
+                        <img src="../assets/images/faces/face10.jpg" alt="avatar">
                         <div class="about">
-                            <div class="name">Nurse Kremer</div>
+                            <div class="name">Nurse Maria</div>
                             <div class="status"> <i class="fa fa-circle online"></i> online </div>
                         </div>
                     </li>
                     <li class="clearfix">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="avatar">
+                        <img src="../assets/images/faces/face12.jpg" alt="avatar">
                         <div class="about">
                             <div class="name">Dr. Henry</div>
                             <div class="status"> <i class="fa fa-circle offline"></i> offline since Oct 28 </div>
@@ -62,7 +62,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                <img src="../assets/images/faces/face3.jpg" alt="avatar">
                             </a>
                             <div class="chat-about">
                                 <h6 class="m-b-0">Dr. Schmidt</h6>
@@ -82,21 +82,21 @@
                         <li class="clearfix">
                             <div class="message-data text-right">
                                 <span class="message-data-time">10:10 AM, Today</span>
-                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                                <img src="../assets/images/faces/face3.jpg" alt="avatar">
                             </div>
-                            <div class="message other-message float-right"> Hi Julian, where the fuck are those x-ray images? </div>
+                            <div class="message other-message float-right"> Hi John, did you manage to get Jenny's x-ray images? </div>
                         </li>
                         <li class="clearfix">
                             <div class="message-data">
                                 <span class="message-data-time">10:12 AM, Today</span>
                             </div>
-                            <div class="message my-message">What the fuck are you talking about?</div>                                    
-                        </li>                               
+                            <div class="message my-message">Yes, they should be uploaded already. You can't see them?</div>
+                            </li>
                         <li class="clearfix">
                             <div class="message-data">
                                 <span class="message-data-time">10:15 AM, Today</span>
                             </div>
-                            <div class="message my-message">Just double checked. The images are already uploaded you blind piece of shit.</div>
+                            <div class="message my-message">Just double checked. The images are already uploaded.</div>
                         </li>
                     </ul>
                 </div>
@@ -105,7 +105,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-send"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Enter text here...">                                    
+                        <input type="text" class="form-control" placeholder="Enter text here...">
                     </div>
                 </div>
             </div>

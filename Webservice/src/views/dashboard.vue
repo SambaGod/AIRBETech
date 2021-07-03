@@ -11,7 +11,7 @@
         <b-dropdown-item>Export as Excel</b-dropdown-item>
     </b-dropdown>
   </div>
-  <h5 style="text-align: center"> <b> John Doe's Tasks </b> </h5>
+  <h3>John Doe's Tasks</h3>
   <b-table :items="tabledata" :fields="fields"
       class="text-center"
       id="mytasks"

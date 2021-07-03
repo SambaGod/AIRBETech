@@ -1,6 +1,6 @@
 <template>
     <div>
-        <b-button v-b-modal.modal-1 class="btn-lg">QR Code</b-button>
+        <b-button v-b-modal.modal-1 class="btn-lg mr-3">QR Code</b-button>
         <b-modal id="modal-1" title="Scanning QR Code">
             <h3 class="my-4">Please place QR code in front of the camera</h3>
             <div>
@@ -10,10 +10,11 @@
                       <span class="sr-only">Loading...</span>
                     </div>
                 </qrcode-stream>
-                <p class='decode-result pt-3 h5'>Status:
+                <div class='decode-result pt-3 h5'>Status:
                     <i v-if='result' class="mdi mdi-checkbox-marked-circle text-success"></i>
                     <i v-if='result==""' class="mdi mdi-close-circle text-danger"></i>
-                </p>
+                    <p v-if='result'><strong>Detected Patient ID: 392761</strong></p>
+                </div>
                 <hr />
                 <p>
                     <strong>Note:</strong> Please make sure the status turns to a green check before removing the QR code

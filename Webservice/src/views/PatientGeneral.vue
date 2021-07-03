@@ -4,6 +4,10 @@
       <div class='card-body'>
         <table class="table">
           <tr>
+            <th>Patient ID</th>
+            <td>{{ user.patient_id }}</td>
+          </tr>
+          <tr>
             <th>First Name</th>
             <td>{{ user.firstname }}</td>
           </tr>
@@ -50,6 +54,7 @@ export default {
   data () {
     return {
       jennifer: {
+        patient_id: '392761',
         firstname: 'Jenny',
         lastname: 'Schmidt',
         room: 256,
@@ -72,6 +77,7 @@ export default {
         ]
       },
       user: {
+        patient_id: '',
         firstname: '',
         lastname: '',
         room: '',
@@ -91,7 +97,6 @@ export default {
   watch: {
     info: function () {
       this.user = this.jennifer
-      console.log(this.user)
     }
   }
 }
@@ -101,7 +106,7 @@ export default {
   table {
     tr {
       th, td{
-        font-size: 1.5em;
+        font-size: 14px;
       }
     }
   }

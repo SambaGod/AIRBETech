@@ -15,14 +15,14 @@
             <div class="nav-link px-2 d-flex align-items-center">
               <div class="d-inline-flex mr-0 mr-md-3">
                 <div class="flag-icon-holder">
-                  <i class="flag-icon flag-icon-de"></i>
+                  <i class="flag-icon flag-icon-gb"></i>
                 </div>
               </div>
-              <span class="profile-text font-weight-medium d-none d-md-block">Deutsch</span>
+              <span class="profile-text font-weight-medium d-none d-md-block">English</span>
             </div>
           </template>
+          <b-dropdown-item><div class="flag-icon-holder"><i class="flag-icon flag-icon-gb"></i></div>English</b-dropdown-item>
           <b-dropdown-item><div class="flag-icon-holder"><i class="flag-icon flag-icon-de"></i></div>Deutsch</b-dropdown-item>
-          <b-dropdown-item><div class="flag-icon-holder"><i class="flag-icon flag-icon-us"></i></div>English</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
       <b-navbar-nav class="navbar-nav-right ml-auto">
