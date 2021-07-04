@@ -13,7 +13,6 @@
   </div>
 
   <h3>John Doe's Tasks</h3>
-    
   <b-modal id="modal-f" title="Forward Task" @ok="forwardEntry" @cancel="resetForward">    
     <b-form-group
       label="New Assignee:"
