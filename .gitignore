@@ -6,6 +6,8 @@ Webservice/yarn-error.log*
 Webservice/test/unit/coverage/
 Webservice/test/e2e/reports/
 Webservice/selenium-debug.log
+Webservice/dist
+Webservice/dist/*
 
 # Editor directories and files
 .idea
