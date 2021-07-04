@@ -70,7 +70,7 @@ export default {
       task: {
         text: '',
         patient: null,
-        assignee: { name: 'John Doe', 'group': 'Doctor' },
+        assignee: { name: 'Choose Name', 'group': 'Doctor' },
         priority: 'Medium',
         due_date: null,
         due_time: null
@@ -80,10 +80,10 @@ export default {
           'Low', 'Medium', 'High'
         ],
         assignees: [
-          { name: 'John Doe', 'group': ' Doctor' },
           { name: 'Marry Linn', 'group': ' Doctor' },
           { name: 'Noah James', 'group': ' Nurse' },
-          { name: 'Emma O\'Neill', 'group': ' Nurse' }
+          { name: 'Emma O\'Neill', 'group': ' Nurse' },
+          { name: 'Alex Schmidt', 'group': ' Doctor' }
         ],
         patients: [
           'Sophie Evans',
