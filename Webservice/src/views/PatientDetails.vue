@@ -8,13 +8,14 @@
         </nav>
         <div class="card">
             <div class="card-body">
-                <h2>
+                <h3>
                     <strong>Patient:</strong>
                     <span>Jenny Schmidt</span>
+                    <span>(ID: 392761)</span>
 
                     <strong class="text-muted">| Room</strong>
                     <span class="text-muted">256</span>
-                </h2>
+                </h3>
             </div>
         </div>
         <div class="mt-3">
@@ -22,7 +23,7 @@
                 <b-tab title="Allergies" active>
                     <div class="card">
                         <div class="card-body">
-                            <h2 class="card-title">This Patient has the following allergies:</h2>
+                            <h3 class="card-title">This Patient has the following allergies:</h3>
                             <div class="card-text">
                                 <ul>
                                     <li v-for="allergy in allergies" :key="allergy">{{ allergy }}</li>
@@ -34,7 +35,7 @@
                 <b-tab title="Patient Decree">
                     <div class="card">
                         <div class="card-body">
-                            Patient Decree not available
+                            <img src="../assets/images/decree.png" alt="patient-decree" width="100%">
                         </div>
                     </div>
                 </b-tab>

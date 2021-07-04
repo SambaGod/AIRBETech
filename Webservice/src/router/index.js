@@ -17,8 +17,8 @@ import assignTasks from '../views/tasks/assign-tasks'
 import login from '../views/samples/user-pages/login'
 import register from '../views/samples/user-pages/register'
 
-//  Table Components
-import basicTables from '../views/tables/basic-table'
+// Messenger
+import Messages from '../views/Messages'
 
 Vue.use(Router)
 
@@ -52,8 +52,8 @@ export default new Router({
         },
         {
           path: '/messages',
-          name: 'basicTables',
-          component: basicTables
+          name: 'Messages',
+          component: Messages
         }
       ]
     },
