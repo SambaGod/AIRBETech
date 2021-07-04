@@ -98,4 +98,7 @@ export default {
 <style scoped lang="scss">
 .app-sidebar {
 }
+.container-fluid {
+  padding-left: 0 !important;
+}
 </style>
