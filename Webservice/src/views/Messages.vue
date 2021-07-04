@@ -98,12 +98,18 @@
                             </div>
                             <div class="message my-message">Just double checked. The images are already uploaded.</div>
                         </li>
+                        <li class="clearfix" v-if="send">
+                            <div class="message-data">
+                                <span class="message-data-time">Just Now</span>
+                            </div>
+                            <div class="message my-message">Hi Alex, just assigned you a new task</div>
+                        </li>
                     </ul>
                 </div>
                 <div class="chat-message clearfix">
                     <div class="input-group mb-0">
                         <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-send"></i></span>
+                            <span class="input-group-text" @click="toggleSend()"><i class="fa fa-send"></i></span>
                         </div>
                         <input type="text" class="form-control" placeholder="Enter text here...">
                     </div>
@@ -118,7 +124,19 @@
 
 <script>
 export default {
-  name: 'Messages'
+  name: 'Messages',
+  methods: {
+    toggleSend () {
+      return (
+        this.send = true
+      )
+    }
+  },
+  data () {
+    return {
+      send: false
+    }
+  }
 }
 </script>
 
