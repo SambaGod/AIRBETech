@@ -8,6 +8,7 @@ import JQuery from 'jquery'
 import VueSlideBar from 'vue-slide-bar'
 import VueSweetalert2 from 'vue-sweetalert2'
 import VueGoodWizard from 'vue-good-wizard'
+import VueConfirmDialog from 'vue-confirm-dialog'
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
@@ -24,8 +25,11 @@ Vue.use(VueSweetalert2, options)
 Vue.use(VueGoodWizard)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+Vue.use(VueConfirmDialog)
+
 
 Vue.component('vue-slide-bar', VueSlideBar)
+Vue.component('vue-confirm-dialog', VueConfirmDialog.default)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
