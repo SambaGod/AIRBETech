@@ -95,7 +95,8 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.app-sidebar {
+<style lang="scss">
+.container-fluid {
+  padding-left: 0 !important;
 }
 </style>
