@@ -53,11 +53,19 @@
                                 <thead>
                                     <tr>
                                         <th>Test Type</th>
-                                        <th>Result</th>
+                                        <th>Outcome</th>
+                                        <th>Number</th>
+                                        <th>Mean</th>
+                                        <th>SEM</th>
+                                        <th><em>p</em> Value</th>
                                     </tr>
                                     <tr v-for="test in tests" :key="test.id">
                                         <td>{{ test.type }}</td>
-                                        <td :class='test.result ? "text-danger" : "text-success"'>{{ test.result ? 'Positive' : 'Negative' }}</td>
+                                        <td><p>Alive</p><p>Dead</p></td>
+                                        <td><p>{{ test.num1 }}</p><p>{{ test.num2 }}</p></td>
+                                        <td><p>{{ test.mean1 }}</p><p>{{ test.mean2 }}</p></td>
+                                        <td><p>{{ test.sem1 }}</p><p>{{ test.sem2 }}</p></td>
+                                        <td>{{ test.pval }}</td>
                                     </tr>
                                 </thead>
                             </table>
@@ -94,38 +102,102 @@ export default {
       tests: [
         {
           id: 0,
-          type: 'CBC',
-          result: false
+          type: 'Total WBC',
+          num1: 291,
+          num2: 47,
+          mean1: 12.5,
+          mean2: 11.3,
+          sem1: 0.4,
+          sem2: 1.4,
+          pval: 0.37
         },
         {
           id: 1,
-          type: 'BMP',
-          result: false
+          type: 'Platelet',
+          rnum1: 291,
+          num2: 47,
+          mean1: 292.2,
+          mean2: 265.8,
+          sem1: 8.7,
+          sem2: 26.4,
+          pval: 0.27
         },
         {
           id: 2,
-          type: 'Blood Gases',
-          result: true
+          type: 'Blood Urea Nitrogen',
+          num1: 273,
+          num2: 47,
+          mean1: 8.3,
+          mean2: 11.8,
+          sem1: 0.5,
+          sem2: 1.4,
+          pval: 0.01
         },
         {
           id: 3,
-          type: 'Bacterial Sputum Culture',
-          result: false
+          type: 'Createnine',
+          rnum1: 273,
+          num2: 47,
+          mean1: 93.6,
+          mean2: 12.7,
+          sem1: 3.1,
+          sem2: 11.7,
+          pval: 0.03
         },
         {
           id: 4,
-          type: 'Influenza Test',
-          result: true
+          type: 'Sodium',
+          num1: 268,
+          num2: 47,
+          mean1: 136.1,
+          mean2: 138.3,
+          sem1: 0.9,
+          sem2: 1.9,
+          pval: 0.32
         },
         {
           id: 5,
-          type: 'Fungal Test',
-          result: false
+          type: 'Glucose',
+          rnum1: 268,
+          num2: 47,
+          mean1: 9.6,
+          mean2: 9.3,
+          sem1: 0.5,
+          sem2: 0.1,
+          pval: 0.77
         },
         {
           id: 6,
-          type: 'PCR',
-          result: true
+          type: 'pH',
+          num1: 76,
+          num2: 16,
+          mean1: 7.4,
+          mean2: 7.3,
+          sem1: 0.01,
+          sem2: 0.03,
+          pval: 0.07
+        },
+        {
+          id: 7,
+          type: 'PCO2',
+          num1: 76,
+          num2: 16,
+          mean1: 37.6,
+          mean2: 51.2,
+          sem1: 1.2,
+          sem2: 4.8,
+          pval: '< 0.001'
+        },
+        {
+          id: 8,
+          type: 'PO2',
+          num1: 76,
+          num2: 16,
+          mean1: 64.9,
+          mean2: 68.3,
+          sem1: 3,
+          sem2: 7.2,
+          pval: 0.64
         }
       ],
       nutrition: [
