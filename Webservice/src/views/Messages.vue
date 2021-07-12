@@ -102,7 +102,7 @@
                             <div class="message-data">
                                 <span class="message-data-time">Just Now</span>
                             </div>
-                            <div class="message my-message">Hi Alex, just assigned you a new task</div>
+                            <div class="message my-message">Hi Alex, when are you taking the break today?</div>
                         </li>
                     </ul>
                 </div>
